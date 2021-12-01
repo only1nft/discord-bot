@@ -134,10 +134,9 @@ func main() {
 		return
 	}
 
-	for _, guild := range dg.State.Guilds {
-		if _, err := dg.ApplicationCommandBulkOverwrite(dg.State.User.ID, guild.ID, commands); err != nil {
-			log.Panic("failed to overwrite commands", err)
-		}
+	createdCommands, err := dg.ApplicationCommandBulkOverwrite(dg.State.User.ID, "", commands)
+	if err != nil {
+		log.Panic("failed to overwrite commands", err)
 	}
 
 	fmt.Println("Bot is now running. Press CTRL-C to exit.")
@@ -145,6 +144,13 @@ func main() {
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
 	fmt.Println("Shutting down...")
+
+	for _, cmd := range createdCommands {
+		err := dg.ApplicationCommandDelete(dg.State.User.ID, "", cmd.ID)
+		if err != nil {
+			log.Fatalf("failed to delete command %q: %v", cmd.Name, err)
+		}
+	}
 
 	dg.Close()
 }
