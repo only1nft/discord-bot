@@ -259,7 +259,11 @@ func (h *Handlers) VerifyCmd(s *discordgo.Session, i *discordgo.InteractionCreat
 		return
 	}
 
-	s.FollowupMessageCreate(s.State.User.ID, i.Interaction, false, &discordgo.WebhookParams{Content: "Success. Role has been assigned."})
+	s.FollowupMessageCreate(s.State.User.ID, i.Interaction, false, &discordgo.WebhookParams{Content: `Success. Role has been assigned.
+Hi, welcome to the future of web3 social on Solana :purple_heart: your opinion is most important to us and we would love to build this future together with you.
+The Ones NFT is your membership card, and future voting right for this DAO (beta) dedicated for product development. Here we will share with you, before the public, our product preview, progress, and updates.
+We will occasionally reward the best product proposals here during the beta. All royalties from The Ones NFT will be added to the Governance Fund. As we develop into a more mature DAO system, the governance fund will be distributed to the contributors in the DAO.
+Please be kind to each other and once again, we are glad to have you here.`})
 }
 
 func (h *Handlers) NftWatchdog(s *discordgo.Session, event *discordgo.Ready) {
