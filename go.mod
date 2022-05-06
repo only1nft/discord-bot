@@ -6,8 +6,9 @@ require (
 	github.com/bwmarrin/discordgo v0.23.3-0.20211117035633-fd6228c0d536
 	github.com/dgraph-io/badger/v3 v3.2103.2
 	github.com/dustin/go-humanize v1.0.0
-	github.com/gagliardetto/solana-go v1.0.2
+	github.com/gagliardetto/solana-go v1.4.0
 	github.com/only1nft/solana-sdk-go v0.0.0-20211227161058-84cbe0b1c607
+	github.com/only1nft/solkit-go v0.0.0-20220506155124-4a1884f992b5
 )
 
 require (
@@ -23,7 +24,7 @@ require (
 	github.com/dfuse-io/logging v0.0.0-20210109005628-b97a57253f70 // indirect
 	github.com/dgraph-io/ristretto v0.1.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
-	github.com/gagliardetto/binary v0.5.0 // indirect
+	github.com/gagliardetto/binary v0.6.1 // indirect
 	github.com/gagliardetto/treeout v0.1.4 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/glog v1.0.0 // indirect
@@ -34,7 +35,7 @@ require (
 	github.com/gorilla/rpc v1.2.0 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/klauspost/compress v1.13.6 // indirect
+	github.com/klauspost/compress v1.15.3 // indirect
 	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
