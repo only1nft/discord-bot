@@ -11,7 +11,7 @@ import (
 
 	"github.com/bwmarrin/discordgo"
 	badger "github.com/dgraph-io/badger/v3"
-	"github.com/only1nft/solkit-go/genesysgo"
+	"github.com/gagliardetto/solana-go/rpc"
 )
 
 const (
@@ -21,7 +21,6 @@ const (
 
 var (
 	discordToken string
-	ggToken      string
 	channelId    string
 	guildId      string
 	roleId       string
@@ -36,7 +35,6 @@ func init() {
 	flag.StringVar(&channelId, "channel", "", "Daily market report channel ID")
 	flag.StringVar(&roleId, "role", "", "OG role ID")
 	flag.BoolVar(&rmCmd, "rm", false, "Remove slash commands on shutdown")
-	flag.StringVar(&ggToken, "ggToken", "", "GenesysGo token")
 	flag.Parse()
 }
 
@@ -63,10 +61,7 @@ func main() {
 	defer dg.Close()
 
 	// Initialize Solana rpc connection
-	if ggToken == "" {
-		log.Fatal("please provide GenesysGo token")
-	}
-	conn := genesysgo.NewRPCClient("https://only1.genesysgo.net/", ggToken)
+	conn := rpc.New("https://only1.genesysgo.net/")
 
 	handlers := Handlers{
 		Conn:          conn,

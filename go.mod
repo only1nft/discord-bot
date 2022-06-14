@@ -8,7 +8,6 @@ require (
 	github.com/dustin/go-humanize v1.0.0
 	github.com/gagliardetto/solana-go v1.4.0
 	github.com/only1nft/solana-sdk-go v0.0.0-20211227161058-84cbe0b1c607
-	github.com/only1nft/solkit-go v0.0.0-20220506155124-4a1884f992b5
 )
 
 require (
